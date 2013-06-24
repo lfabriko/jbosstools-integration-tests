@@ -15,10 +15,10 @@ import org.junit.runners.Suite.SuiteClasses;
  * 
  */
 @SuiteClasses({
-	//ImportWizardTest.class,
-	//ModelWizardTest.class,
-	//TopDownWsdlTest.class,
-	//VirtualGroupTutorialTest.class,
+	ImportWizardTest.class,
+	ModelWizardTest.class,
+	TopDownWsdlTest.class,
+	VirtualGroupTutorialTest.class,
 	VirtualGroupTutorialUpdatedTest.class
 })
 @RunWith(TeiidSuite.class)
