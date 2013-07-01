@@ -2,6 +2,7 @@ package org.jboss.tools.teiid.ui.bot.test.suite;
 
 import org.jboss.tools.teiid.ui.bot.test.ImportWizardTest;
 import org.jboss.tools.teiid.ui.bot.test.ModelWizardTest;
+import org.jboss.tools.teiid.ui.bot.test.TeiidConnectionImportTest;
 import org.jboss.tools.teiid.ui.bot.test.TopDownWsdlTest;
 import org.jboss.tools.teiid.ui.bot.test.VirtualGroupTutorialTest;
 import org.jboss.tools.teiid.ui.bot.test.VirtualGroupTutorialUpdatedTest;
@@ -15,11 +16,12 @@ import org.junit.runners.Suite.SuiteClasses;
  * 
  */
 @SuiteClasses({
-	ImportWizardTest.class,
+	/*ImportWizardTest.class,
 	ModelWizardTest.class,
 	TopDownWsdlTest.class,
 	VirtualGroupTutorialTest.class,
-	VirtualGroupTutorialUpdatedTest.class
+	VirtualGroupTutorialUpdatedTest.class*/
+	TeiidConnectionImportTest.class
 })
 @RunWith(TeiidSuite.class)
 public class AllTests {

@@ -29,7 +29,8 @@ public class ServerWizard extends NewWizardDialog {
 	public void execute() {
 		open();
 
-		new DefaultTreeItem(1, type).select();
+		//new DefaultTreeItem(1, type).select();
+		new DefaultTreeItem(0, type).select();
 		new LabeledText("Server name:").setText(name);
 
 		finish();
