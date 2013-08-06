@@ -38,6 +38,8 @@ public class CreateMetadataModel extends NewWizardDialog {
 		public static final String MODEL_EXTENSION = "Model Extension (Deprecated)";
 
 		public static final String FUNCTION = "Function (Deprecated)";
+		
+		public static final String FUNCTION_TEIIDDES_7 = "Function";
 
 	}
 

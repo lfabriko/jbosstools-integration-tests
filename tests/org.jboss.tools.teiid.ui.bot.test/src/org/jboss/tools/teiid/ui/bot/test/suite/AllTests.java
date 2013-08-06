@@ -16,12 +16,12 @@ import org.junit.runners.Suite.SuiteClasses;
  * 
  */
 @SuiteClasses({
-	//ImportWizardTest.class,
-	//ModelWizardTest.class,
+	//mportWizardTest.class,
+	ModelWizardTest.class,
 	//TopDownWsdlTest.class,
 	//VirtualGroupTutorialTest.class,
 	//VirtualGroupTutorialUpdatedTest.class
-	E2eAudioBooksVdbExecutionTest.class
+	//E2eAudioBooksVdbExecutionTest.class
 })
 @RunWith(TeiidSuite.class)
 public class AllTests {

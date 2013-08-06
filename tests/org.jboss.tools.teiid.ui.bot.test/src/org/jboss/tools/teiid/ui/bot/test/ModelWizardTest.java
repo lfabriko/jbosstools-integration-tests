@@ -145,7 +145,7 @@ public class ModelWizardTest extends SWTBotTestCase {
 		CreateMetadataModel createModel = new CreateMetadataModel();
 		createModel.setLocation(PROJECT_NAME);
 		createModel.setName(FUNCTION_MODEL_NAME);
-		createModel.setClass(CreateMetadataModel.ModelClass.FUNCTION);
+		createModel.setClass(CreateMetadataModel.ModelClass.FUNCTION_TEIIDDES_7);
 		createModel.setType(CreateMetadataModel.ModelType.FUNCTION);
 		createModel.execute();
 
