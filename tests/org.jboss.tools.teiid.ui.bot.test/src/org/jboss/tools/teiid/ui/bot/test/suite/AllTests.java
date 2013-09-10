@@ -21,7 +21,8 @@ import org.junit.runners.Suite.SuiteClasses;
 	//TopDownWsdlTest.class,
 	//VirtualGroupTutorialTest.class,
 	//VirtualGroupTutorialUpdatedTest.class
-	E2eAudioBooksVdbExecutionTest.class
+	//E2eAudioBooksVdbExecutionTest.class,
+	BasicTest.class
 })
 @RunWith(TeiidSuite.class)
 public class AllTests {
