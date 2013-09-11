@@ -28,7 +28,8 @@
 	  <!-- Teiid Repository -->
 	  <repository>
 	    <id>teiid</id>
-	    <url>${teiid-designer.site}</url>
+	    <!--<url>${teiid-designer.site}</url>-->
+	    <url>${jbtis.site}</url>
 	    <layout>p2</layout>
 	    <snapshots>
 	      <enabled>true</enabled>

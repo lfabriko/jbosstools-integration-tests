@@ -1,5 +1,6 @@
 package org.jboss.tools.teiid.ui.bot.test.suite;
 
+import org.jboss.tools.teiid.ui.bot.test.BasicTest;
 import org.jboss.tools.teiid.ui.bot.test.E2eAudioBooksVdbExecutionTest;
 import org.jboss.tools.teiid.ui.bot.test.ImportWizardTest;
 import org.jboss.tools.teiid.ui.bot.test.ModelWizardTest;
