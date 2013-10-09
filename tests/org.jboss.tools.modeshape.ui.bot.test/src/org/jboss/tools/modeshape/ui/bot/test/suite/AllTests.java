@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite.SuiteClasses;
 
 @SuiteClasses({
-	PublishingTest.class,
+	//PublishingTest.class,
 	TeiidPublishingTest.class
 })
 @RunWith(ModeshapeSuite.class)
