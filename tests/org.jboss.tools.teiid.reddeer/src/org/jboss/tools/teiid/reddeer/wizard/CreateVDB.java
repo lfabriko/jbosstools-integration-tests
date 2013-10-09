@@ -43,8 +43,6 @@ public class CreateVDB extends NewWizardDialog {
 			new SWTWorkbenchBot().button("New...").click();
 			fillFirstPage();
 			finish();
-			//new WaitWhile(new IsInProgress(), TimePeriod.LONG);
-			new WaitUntil(new ShellWithTextIsActive("Define VDB"));
 			new DefaultShell("Define VDB").setFocus();
 			new PushButton("OK").click();
 		} else {
