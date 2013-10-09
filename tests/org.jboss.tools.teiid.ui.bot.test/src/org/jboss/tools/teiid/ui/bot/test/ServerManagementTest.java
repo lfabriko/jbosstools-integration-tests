@@ -141,7 +141,16 @@ public class ServerManagementTest extends SWTBotTestCase {
 	 */
 	@Test
 	public void test03() {
-		TeiidSuite.addServerWithProperties(properties[0]);
+		SWTBotPreferences.PLAYBACK_DELAY = 2000;
+		for (int i = 0; i < properties.length; i++) {
+			TeiidSuite.addServerWithProperties(properties[i]);// define AS-5,
+																// EAP-6.1
+		}
+		SWTBotPreferences.PLAYBACK_DELAY = 1000;
+		System.out.println("---Servers added---");
+		bot.sleep(10000);
+		
+		//TeiidSuite.addServerWithProperties(properties[0]);
 		
 		//SWTBotPreferences.PLAYBACK_DELAY = 1000;
 		n++;
