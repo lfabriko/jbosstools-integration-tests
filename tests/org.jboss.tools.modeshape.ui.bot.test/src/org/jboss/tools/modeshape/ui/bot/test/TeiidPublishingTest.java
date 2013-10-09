@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.swtbot.swt.finder.SWTBotTestCase;
+import org.eclipse.swtbot.swt.finder.utils.SWTBotPreferences;
 import org.jboss.reddeer.swt.impl.button.PushButton;
 import org.jboss.reddeer.swt.impl.text.DefaultText;
 import org.jboss.tools.modeshape.reddeer.util.ModeshapeWebdav;
@@ -43,6 +44,7 @@ public class TeiidPublishingTest extends SWTBotTestCase {
 
 	@Test
 	public void publishingTest() throws Exception {
+		SWTBotPreferences.PLAYBACK_DELAY = 1000;
 		/* Create ModeShape Server */
 		new ModeshapeView().addServer(SERVER_URL, USER, PASSWORD);
 

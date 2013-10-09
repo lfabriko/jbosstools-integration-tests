@@ -156,7 +156,7 @@ public class ServerManagementTest extends SWTBotTestCase {
 		n++;
 		// start server EAP-6.1
 		TeiidInstanceView teiidInstanceView = new TeiidInstanceView(true);
-		teiidInstanceView.startServer(serverNames[0]);
+		/*teiidInstanceView.startServer(serverNames[0]);
 
 		//specify the default teiid instance
 		teiidInstanceView.setDefaultTeiidInstance(EAP6_URL);
@@ -181,7 +181,7 @@ public class ServerManagementTest extends SWTBotTestCase {
 		// stop server EAP-6.1
 		teiidInstanceView.stopServer(serverNames[0]);
 		
-		new WaitWhile(new JobIsRunning(), TimePeriod.LONG);
+		new WaitWhile(new JobIsRunning(), TimePeriod.LONG);*/
 
 		//server AS-5
 		teiidInstanceView.setDefaultTeiidInstance(AS5_URL);
