@@ -184,7 +184,7 @@ public class ServerManagementTest extends SWTBotTestCase {
 		new WaitWhile(new JobIsRunning(), TimePeriod.LONG);
 
 		//server AS-5
-		/*teiidInstanceView.setDefaultTeiidInstance(AS5_URL);
+		teiidInstanceView.setDefaultTeiidInstance(AS5_URL);
 		n++;
 		// start server AS-5
 		teiidInstanceView.startServer(serverNames[1]);//AS5 server must have in profile/lib the hsqldb.jar driver
@@ -210,7 +210,7 @@ public class ServerManagementTest extends SWTBotTestCase {
 		
 		// stop server
 		teiidInstanceView.stopServer(serverNames[1]);
-		new WaitWhile(new JobIsRunning(), TimePeriod.LONG);*/
+		new WaitWhile(new JobIsRunning(), TimePeriod.LONG);
 	}
 
 	
