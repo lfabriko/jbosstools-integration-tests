@@ -87,7 +87,7 @@ public class ServerManagementTest extends SWTBotTestCase {
 	/**
 	 * No server defined
 	 */
-	@Test
+	//@Test
 	public void test01() {
 		SWTBotPreferences.PLAYBACK_DELAY = 1000;
 		n++;
@@ -109,7 +109,7 @@ public class ServerManagementTest extends SWTBotTestCase {
 	/**
 	 * Servers defined, not started
 	 */
-	@Test
+	//@Test
 	public void test02() {
 		SWTBotPreferences.PLAYBACK_DELAY = 2000;
 		
@@ -141,7 +141,9 @@ public class ServerManagementTest extends SWTBotTestCase {
 	 */
 	@Test
 	public void test03() {
-		SWTBotPreferences.PLAYBACK_DELAY = 1000;
+		TeiidSuite.addServerWithProperties(properties[0]);
+		
+		//SWTBotPreferences.PLAYBACK_DELAY = 1000;
 		n++;
 		// start server EAP-6.1
 		TeiidInstanceView teiidInstanceView = new TeiidInstanceView(true);
@@ -173,7 +175,7 @@ public class ServerManagementTest extends SWTBotTestCase {
 		new WaitWhile(new JobIsRunning(), TimePeriod.LONG);
 
 		//server AS-5
-		teiidInstanceView.setDefaultTeiidInstance(AS5_URL);
+		/*teiidInstanceView.setDefaultTeiidInstance(AS5_URL);
 		n++;
 		// start server AS-5
 		teiidInstanceView.startServer(serverNames[1]);//AS5 server must have in profile/lib the hsqldb.jar driver
@@ -199,7 +201,7 @@ public class ServerManagementTest extends SWTBotTestCase {
 		
 		// stop server
 		teiidInstanceView.stopServer(serverNames[1]);
-		new WaitWhile(new JobIsRunning(), TimePeriod.LONG);
+		new WaitWhile(new JobIsRunning(), TimePeriod.LONG);*/
 	}
 
 	

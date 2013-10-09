@@ -18,6 +18,7 @@ import org.jboss.reddeer.swt.wait.TimePeriod;
 import org.jboss.reddeer.swt.wait.WaitUntil;
 import org.jboss.reddeer.swt.wait.WaitWhile;
 import org.jboss.reddeer.workbench.view.impl.WorkbenchView;
+import org.jboss.tools.teiid.reddeer.condition.IsInProgress;
 import org.jboss.tools.teiid.reddeer.condition.ServerHasState;
 
 /**
@@ -99,6 +100,7 @@ public class TeiidInstanceView extends WorkbenchView {
 		SWTBot bot = new SWTWorkbenchBot();
 		try {
 			//SWTBotTreeItem item = bot.tree(TEIID_INSTANCE_TREE_INDEX).expandNode(pathToVDB);new ContextMenu("Refresh");OK; new TeiidInstanceView(true);expand;getNode;
+			new WaitWhile(new IsInProgress(), TimePeriod.NORMAL);
 			new DefaultTreeItem(pathToVDB).select();
 			return true;
 		} catch (WidgetNotFoundException e) {
