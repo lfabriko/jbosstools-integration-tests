@@ -11,6 +11,7 @@ import org.jboss.reddeer.swt.wait.TimePeriod;
 import org.jboss.reddeer.swt.wait.WaitUntil;
 import org.jboss.reddeer.swt.wait.WaitWhile;
 import org.jboss.tools.teiid.reddeer.VDB;
+import org.jboss.tools.teiid.reddeer.condition.IsInProgress;
 import org.jboss.tools.teiid.reddeer.condition.ServerHasState;
 import org.jboss.tools.teiid.reddeer.editor.SQLScrapbookEditor;
 import org.jboss.tools.teiid.reddeer.editor.VDBEditor;
@@ -195,6 +196,7 @@ public class ServerManagementTest extends SWTBotTestCase {
 
 		// create VDB - pass
 		assertTrue(canCreateVDB(VDB + n, MODEL_NAME));
+		new WaitWhile(new IsInProgress(), TimePeriod.LONG);
 
 		// deploy VDB - pass
 		assertTrue(canDeployVDB(null, VDB + n, createPathToVDB(VDB + n, pathToVDB_AS5)));
