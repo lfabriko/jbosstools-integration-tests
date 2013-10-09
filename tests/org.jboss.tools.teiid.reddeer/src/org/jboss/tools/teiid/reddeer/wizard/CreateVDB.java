@@ -1,7 +1,10 @@
 package org.jboss.tools.teiid.reddeer.wizard;
 
 import org.jboss.reddeer.eclipse.jface.wizard.NewWizardDialog;
+import org.jboss.reddeer.swt.wait.TimePeriod;
+import org.jboss.reddeer.swt.wait.WaitWhile;
 import org.eclipse.swtbot.eclipse.finder.SWTWorkbenchBot;
+import org.jboss.tools.teiid.reddeer.condition.IsInProgress;
 import org.jboss.tools.teiid.reddeer.view.GuidesView;
 
 /**
@@ -36,6 +39,7 @@ public class CreateVDB extends NewWizardDialog {
 			new SWTWorkbenchBot().button("New...").click();
 			fillFirstPage();
 			finish();
+			new WaitWhile(new IsInProgress(), TimePeriod.LONG);
 			new SWTWorkbenchBot().button("OK").click();
 		} else {
 			execute();
