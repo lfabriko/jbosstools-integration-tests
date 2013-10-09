@@ -1,7 +1,11 @@
 package org.jboss.tools.teiid.reddeer.wizard;
 
 import org.jboss.reddeer.eclipse.jface.wizard.NewWizardDialog;
+import org.jboss.reddeer.swt.condition.ShellWithTextIsActive;
+import org.jboss.reddeer.swt.impl.button.PushButton;
+import org.jboss.reddeer.swt.impl.shell.DefaultShell;
 import org.jboss.reddeer.swt.wait.TimePeriod;
+import org.jboss.reddeer.swt.wait.WaitUntil;
 import org.jboss.reddeer.swt.wait.WaitWhile;
 import org.eclipse.swtbot.eclipse.finder.SWTWorkbenchBot;
 import org.jboss.tools.teiid.reddeer.condition.IsInProgress;
@@ -39,8 +43,10 @@ public class CreateVDB extends NewWizardDialog {
 			new SWTWorkbenchBot().button("New...").click();
 			fillFirstPage();
 			finish();
-			new WaitWhile(new IsInProgress(), TimePeriod.LONG);
-			new SWTWorkbenchBot().button("OK").click();
+			//new WaitWhile(new IsInProgress(), TimePeriod.LONG);
+			new WaitUntil(new ShellWithTextIsActive("Define VDB"));
+			new DefaultShell("Define VDB").setFocus();
+			new PushButton("OK").click();
 		} else {
 			execute();
 		}
