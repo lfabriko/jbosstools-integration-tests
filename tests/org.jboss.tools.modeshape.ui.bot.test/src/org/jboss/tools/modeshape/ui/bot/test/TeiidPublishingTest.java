@@ -12,6 +12,8 @@ import org.eclipse.swtbot.swt.finder.SWTBotTestCase;
 import org.eclipse.swtbot.swt.finder.utils.SWTBotPreferences;
 import org.jboss.reddeer.swt.impl.button.PushButton;
 import org.jboss.reddeer.swt.impl.text.DefaultText;
+import org.jboss.reddeer.swt.wait.TimePeriod;
+import org.jboss.reddeer.swt.wait.WaitWhile;
 import org.jboss.tools.modeshape.reddeer.util.ModeshapeWebdav;
 import org.jboss.tools.modeshape.reddeer.util.TeiidDriver;
 import org.jboss.tools.modeshape.reddeer.view.ModeshapeExplorer;
@@ -23,6 +25,7 @@ import org.jboss.tools.modeshape.ui.bot.test.suite.PerspectiveRequirement.Perspe
 import org.jboss.tools.modeshape.ui.bot.test.suite.ServerRequirement.Server;
 import org.jboss.tools.modeshape.ui.bot.test.suite.ServerRequirement.State;
 import org.jboss.tools.modeshape.ui.bot.test.suite.ServerRequirement.Type;
+import org.jboss.tools.teiid.reddeer.condition.IsInProgress;
 import org.junit.Test;
 
 /**
@@ -67,6 +70,8 @@ public class TeiidPublishingTest extends SWTBotTestCase {
 		new ModeshapeView().addPublishArea(SERVER_URL, repository, WORKSPACE, PUBLISH_AREA);
 		
 		new ModeshapeExplorer().publish("ModeShapeGoodies").finish();
+		
+		new WaitWhile(new IsInProgress(), TimePeriod.LONG);
 		
 		checkPublishedFile("/ModeShapeGoodies/BookDatatypes.xsd");
 		checkPublishedFile("/ModeShapeGoodies/Books.xsd");

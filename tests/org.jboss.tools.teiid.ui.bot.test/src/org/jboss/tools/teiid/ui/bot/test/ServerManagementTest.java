@@ -149,7 +149,7 @@ public class ServerManagementTest extends SWTBotTestCase {
 		}
 		SWTBotPreferences.PLAYBACK_DELAY = 1000;
 		System.out.println("---Servers added---");
-		//bot.sleep(10000);
+		bot.sleep(10000);
 
 		n++;
 		// start server EAP-6.1
