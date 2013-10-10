@@ -3,6 +3,7 @@ package org.jboss.tools.modeshape.reddeer.view;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.swtbot.eclipse.finder.SWTWorkbenchBot;
 import org.jboss.reddeer.swt.api.TreeItem;
 import org.jboss.reddeer.swt.impl.button.PushButton;
 import org.jboss.reddeer.swt.impl.menu.ContextMenu;
@@ -47,6 +48,9 @@ public class ModeshapeView extends WorkbenchView {
 	 */
 	public List<String> getServers() {
 		open();
+		if (new DefaultTree().getItems().isEmpty()){
+			new SWTWorkbenchBot().sleep(5000);
+		}
 		List<String> servers = new ArrayList<String>();
 		for (TreeItem server : new DefaultTree().getItems()) {
 			servers.add(server.getText());
@@ -90,6 +94,10 @@ public class ModeshapeView extends WorkbenchView {
 	
 	public List<String> getPublishAreas(String url, String repository, String workspace){
 		List<String> publishAreas = new ArrayList<String>();
+			
+		if (new DefaultTreeItem(url, repository, workspace).isDisposed()){
+			new SWTWorkbenchBot().sleep(5000);
+		}
 		for (TreeItem pa : new DefaultTreeItem(url, repository, workspace).getItems()) {
 			publishAreas.add(pa.getText());
 		} 

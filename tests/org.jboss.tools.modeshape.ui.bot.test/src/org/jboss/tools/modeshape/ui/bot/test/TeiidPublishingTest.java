@@ -44,10 +44,11 @@ public class TeiidPublishingTest extends SWTBotTestCase {
 
 	@Test
 	public void publishingTest() throws Exception {
-		SWTBotPreferences.PLAYBACK_DELAY = 1000;
+		SWTBotPreferences.PLAYBACK_DELAY = 2000;
 		/* Create ModeShape Server */
 		new ModeshapeView().addServer(SERVER_URL, USER, PASSWORD);
 
+		SWTBotPreferences.PLAYBACK_DELAY = 1000;
 		new ImportProjectWizard("resources/projects/ModeShapeGoodies.zip").execute();
 		
 		//dialog - password to model
