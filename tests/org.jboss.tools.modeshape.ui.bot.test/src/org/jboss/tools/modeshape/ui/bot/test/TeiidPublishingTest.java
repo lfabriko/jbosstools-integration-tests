@@ -26,7 +26,7 @@ import org.jboss.tools.modeshape.ui.bot.test.suite.PerspectiveRequirement.Perspe
 import org.jboss.tools.modeshape.ui.bot.test.suite.ServerRequirement.Server;
 import org.jboss.tools.modeshape.ui.bot.test.suite.ServerRequirement.State;
 import org.jboss.tools.modeshape.ui.bot.test.suite.ServerRequirement.Type;
-import org.jboss.tools.teiid.reddeer.condition.IsInProgress;
+import org.jboss.tools.modeshape.reddeer.condition.IsInProgress;
 import org.junit.Test;
 
 /**

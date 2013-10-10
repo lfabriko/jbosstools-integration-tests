@@ -12,8 +12,7 @@ Require-Bundle: org.jboss.tools.modeshape.reddeer;bundle-version="4.1.0",
  org.jboss.reddeer.junit,
  org.eclipse.swtbot.go
 Bundle-ActivationPolicy: lazy
-Import-Package: org.apache.log4j,
- org.jboss.tools.teiid.reddeer.condition
+Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-Vendor: JBoss by Red Hat
 Eclipse-RegisterBuddy: org.apache.log4j
