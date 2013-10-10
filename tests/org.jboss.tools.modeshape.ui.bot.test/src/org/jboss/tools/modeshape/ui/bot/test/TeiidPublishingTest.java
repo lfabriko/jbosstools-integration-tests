@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.swtbot.eclipse.finder.SWTWorkbenchBot;
 import org.eclipse.swtbot.swt.finder.SWTBotTestCase;
 import org.eclipse.swtbot.swt.finder.utils.SWTBotPreferences;
 import org.jboss.reddeer.swt.impl.button.PushButton;
@@ -117,6 +118,8 @@ public class TeiidPublishingTest extends SWTBotTestCase {
 		System.out.println("ModeShape VDB contains \n "
 				+ "Books_Oracle.xmi: " + containsBooksOracleXmi + ", BooksInfo.xmi: " + containsBooksInfoXmi +
 				", Books_Oracle: " + containsBooksOracle + ", BooksInfo: " + containsBooksInfo);
+	
+		new SWTWorkbenchBot().sleep(60000);
 	}
 
 	private void checkPublishedFile(String path) throws IOException {
