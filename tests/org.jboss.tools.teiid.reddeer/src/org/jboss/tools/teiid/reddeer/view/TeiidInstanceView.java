@@ -162,7 +162,7 @@ public class TeiidInstanceView extends WorkbenchView {
 		Server server = new ServersView().getServer(serverName);
 		new WaitUntil(new ServerHasState(serverName), TimePeriod.LONG);
 		server.start();
-		new WaitUntil(new ServerHasState(serverName), TimePeriod.VERY_LONG);
+		new WaitUntil(new ServerHasState(serverName), TimePeriod.LONG);
 	}
 	
 	public void stopServer(String serverName){
