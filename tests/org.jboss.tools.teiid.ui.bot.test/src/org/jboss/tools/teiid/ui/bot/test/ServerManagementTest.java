@@ -81,7 +81,7 @@ public class ServerManagementTest extends SWTBotTestCase {
 		
 		new ImportProjectWizard("resources/projects/ServerMgmtTest.zip").execute(); //incorrect connection profile
 		//wait while is project imported
-		new WaitWhile(new IsProjectItemCreated(PROJECT_NAME, MODEL_NAME), TimePeriod.NORMAL);
+		new WaitUntil(new IsProjectItemCreated(PROJECT_NAME, MODEL_NAME), TimePeriod.LONG);
 		
 		//set connection profile
 		new ModelExplorer().changeConnectionProfile(HSQLDB_PROFILE, PROJECT_NAME, MODEL_NAME);
