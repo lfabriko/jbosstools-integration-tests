@@ -7,6 +7,8 @@ import org.jboss.reddeer.eclipse.wst.server.ui.view.Server;
 import org.jboss.reddeer.eclipse.wst.server.ui.view.ServersView;
 import org.jboss.reddeer.eclipse.wst.server.ui.view.ServersViewEnums.ServerState;
 import org.jboss.reddeer.eclipse.wst.server.ui.view.ServersViewException;
+import org.jboss.reddeer.swt.api.Button;
+import org.jboss.reddeer.swt.condition.ButtonWithTextIsActive;
 import org.jboss.reddeer.swt.condition.JobIsRunning;
 import org.jboss.reddeer.swt.impl.button.PushButton;
 import org.jboss.reddeer.swt.impl.combo.DefaultCombo;
@@ -19,6 +21,8 @@ import org.jboss.reddeer.swt.wait.WaitUntil;
 import org.jboss.reddeer.swt.wait.WaitWhile;
 import org.jboss.reddeer.workbench.view.impl.WorkbenchView;
 import org.jboss.tools.teiid.reddeer.condition.IsInProgress;
+import org.jboss.tools.teiid.reddeer.condition.IsViewWithTitleActive;
+import org.jboss.tools.teiid.reddeer.condition.PushButtonIsEnabled;
 import org.jboss.tools.teiid.reddeer.condition.ServerHasState;
 
 /**
@@ -150,12 +154,13 @@ public class TeiidInstanceView extends WorkbenchView {
 		} catch (Exception ex){
 			System.err.println(ex.getCause() + "," + ex.getMessage());
 		}
-		
+		new WaitUntil(new PushButtonIsEnabled("OK"));
 		new PushButton("OK").click();// confirm change of default server
 	}
 	
 	public void startServer(String serverName){
 		Server server = new ServersView().getServer(serverName);
+		new WaitUntil(new ServerHasState(serverName), TimePeriod.LONG);
 		server.start();
 		new WaitUntil(new ServerHasState(serverName), TimePeriod.VERY_LONG);
 	}
