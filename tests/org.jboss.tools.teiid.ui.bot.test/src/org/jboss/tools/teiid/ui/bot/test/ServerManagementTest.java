@@ -224,6 +224,7 @@ public class ServerManagementTest extends SWTBotTestCase {
 		} else {
 			new GuidesView().previewData(true, PROJECT_NAME, MODEL_NAME,
 					tableName);
+			new WaitWhile(new IsInProgress(), TimePeriod.VERY_LONG);
 			SQLResult result = DatabaseDevelopmentPerspective.getInstance()
 					.getSqlResultsView().getByOperation(TEST_SQL1);// "select * from \""+MODEL_NAME.substring(0,MODEL_NAME.indexOf("."))+"\".\""+tableName+"\""
 			assertEquals(SQLResult.STATUS_SUCCEEDED, result.getStatus());
