@@ -12,6 +12,7 @@ import org.jboss.reddeer.swt.wait.WaitUntil;
 import org.jboss.reddeer.swt.wait.WaitWhile;
 import org.jboss.tools.teiid.reddeer.VDB;
 import org.jboss.tools.teiid.reddeer.condition.IsInProgress;
+import org.jboss.tools.teiid.reddeer.condition.IsProjectItemCreated;
 import org.jboss.tools.teiid.reddeer.condition.ServerHasState;
 import org.jboss.tools.teiid.reddeer.editor.SQLScrapbookEditor;
 import org.jboss.tools.teiid.reddeer.editor.VDBEditor;
@@ -34,7 +35,6 @@ import org.junit.Test;
  * install all required servers
  * 
  * @author lfabriko
- * (linux fedora 18, 64bit locally - 8 min)
  */
 @Perspective(name = "Teiid Designer")
 public class ServerManagementTest extends SWTBotTestCase {
@@ -80,6 +80,9 @@ public class ServerManagementTest extends SWTBotTestCase {
 				true, true);
 		
 		new ImportProjectWizard("resources/projects/ServerMgmtTest.zip").execute(); //incorrect connection profile
+		//wait while is project imported
+		new WaitWhile(new IsProjectItemCreated(PROJECT_NAME, MODEL_NAME), TimePeriod.NORMAL);
+		
 		//set connection profile
 		new ModelExplorer().changeConnectionProfile(HSQLDB_PROFILE, PROJECT_NAME, MODEL_NAME);
 		
@@ -100,11 +103,12 @@ public class ServerManagementTest extends SWTBotTestCase {
 
 		// deploy VDB - fail
 		// TODO (Error log shows new line)
-		// assertFalse(canDeployVDB(SERVER_NOT_CONNECTED, VDB + n));
+		 //assertFalse(canDeployVDB(SERVER_NOT_CONNECTED, VDB + n));
 
 		// execute VDB - fail
 		// TODO (NPE)
-		// assertFalse(canExecuteVDB(
+		 //assertFalse(canExecuteVDB(null, VDB +n, TEST_SQL1));
+		 
 	}
 
 	/**

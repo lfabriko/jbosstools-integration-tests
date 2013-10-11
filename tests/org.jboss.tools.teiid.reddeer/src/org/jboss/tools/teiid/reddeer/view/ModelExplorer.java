@@ -1,9 +1,12 @@
 package org.jboss.tools.teiid.reddeer.view;
 
 import org.jboss.reddeer.eclipse.jdt.ui.AbstractExplorer;
+import org.jboss.reddeer.swt.condition.ShellWithTextIsActive;
 import org.jboss.reddeer.swt.impl.button.PushButton;
 import org.jboss.reddeer.swt.impl.menu.ContextMenu;
 import org.jboss.reddeer.swt.impl.tree.DefaultTreeItem;
+import org.jboss.reddeer.swt.wait.TimePeriod;
+import org.jboss.reddeer.swt.wait.WaitUntil;
 import org.jboss.tools.teiid.reddeer.ModelProject;
 import org.jboss.tools.teiid.reddeer.wizard.ModelProjectWizard;
 
@@ -46,6 +49,10 @@ public class ModelExplorer extends AbstractExplorer {
 	public void changeConnectionProfile(String connectionProfile, String projectName, String... projectItem){
 		new ModelExplorer().getProject(projectName).getProjectItem(projectItem).select();
 		new ContextMenu("Modeling", "Set Connection Profile").select();
+		
+		//wait until shell is active
+		new WaitUntil(new ShellWithTextIsActive("Set Connection Profile"),  TimePeriod.LONG);
+		
 		new DefaultTreeItem("Database Connections", connectionProfile).select();
 		new PushButton("OK").click();
 	}
