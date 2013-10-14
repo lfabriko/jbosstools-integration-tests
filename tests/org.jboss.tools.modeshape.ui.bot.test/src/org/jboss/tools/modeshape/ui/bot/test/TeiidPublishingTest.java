@@ -95,6 +95,9 @@ public class TeiidPublishingTest extends SWTBotTestCase {
 			DriverManager.registerDriver(new TeiidDriver(path + "/client/teiid-client.jar"));
 		}
 
+		//sleep - publishing process
+		new SWTWorkbenchBot().sleep(60000);
+		
 		Connection conn = DriverManager.getConnection("jdbc:teiid:ModeShape@mm://localhost:31000", "user", "user");
 		Statement stmt = conn.createStatement();
 		ResultSet rs = stmt.executeQuery("SELECT * FROM ModeShape.xmi_model");
